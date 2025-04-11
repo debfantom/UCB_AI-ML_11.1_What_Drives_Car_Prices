@@ -29,11 +29,6 @@ We expect:
 
 > Other vehicle attributes — such as **cylinders, transmission type, and body type** — provide additional predictive value and may explain pricing variation not captured by age or mileage alone.
 
-Specifically, we expect:
-- **Trucks and convertibles** to be priced higher than sedans and hatchbacks, even after adjusting for age and mileage.
-- **Manual transmission** may contribute positively to price in certain vehicle segments, reflecting either enthusiast value or performance positioning.
-- **Regional effects** may show up in subtle ways, given consumer preferences and inventory supply vary across counties and metros.
-
 ---
 
 ## ⚖️ Project Workflow
