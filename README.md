@@ -88,7 +88,7 @@ All achieved strong performance:
 | Ridge Regression  | $6,135.70 | $4,137.15 | 0.77     |
 | Lasso Regression  | $6,135.71 | $4,137.15 | 0.77     |
 
-> The small difference between models indicates minimal multicollinearity and good data conditioning.
+> The best alpha values for Ridge and Lasso models are very very small so regularization has little to no effect.  The result is that Ridge and Lasso models behave like the baseline Linear Regression model.
 
 ---
 
