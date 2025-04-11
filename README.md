@@ -9,21 +9,24 @@ This repository contains:
 
 ## 📖 Project Overview
 
-The objective of this project is to develop a data-driven multiple regression model to analyze the key factors influencing consumer demand as evidenced by used car prices and ultimately help the dealer stock and price inventory to maximize profitability. We will explore multiple supervised learning regression models. Explainability is a key requirement of the deliverable.  It is generally thought that age, mileage, and condition are key considerations - we want to confirm and identify any other important features through domain knowledge and statstical feature selection methods.  In addition, geographic variations will be explored to optimize pricing strategies for both local and broader markets as many consumers still like to buy locally but the rise in popularity of online listing sites expand consumers' geographical search area and options.
+The objective of this project is to develop a data-driven multiple regression model to analyze the key factors influencing consumer demand, as evidenced by used car prices, and ultimately help dealers stock and price inventory to maximize profitability. Multiple supervised learning regression models were explored. Explainability was a key requirement of the deliverable. 
 
-> **Note:** The dataset was filtered to include only **used, working, personal vehicles with clean titles** in **California**, removing new, offroad, salvage, and non-standard types. This ensures that our analysis reflects the market segment most relevant to everyday dealership operations in California. At scale we should be able to utilize the same analysis and process for other states.
+It is generally believed that age, mileage, and condition are the most important considerations in pricing — this project seeks to confirm those assumptions and identify any additional influential features using domain knowledge and statistical feature selection methods. In addition, geographic variations were explored to optimize pricing strategies for both local and broader markets, recognizing that while many consumers still prefer to buy locally, the rise in online listing platforms has expanded geographical search areas and options.
+
+> **Note:** The dataset was filtered to include only **used, working, personal vehicles with clean titles** in **California**, removing new, offroad, salvage, and non-standard types. This ensures the analysis reflects the market segment most relevant to everyday dealership operations in California. At scale, the same approach could be applied to other states.
 
 ---
+
 ## 🔍 Hypotheses
 
 ### **Primary Hypothesis**
 
 > Used car prices are primarily influenced by a combination of **age**, **mileage**, and **condition**, which are commonly accepted as the key indicators of a vehicle’s value in the secondary market.
 
-We expect:
-- Newer cars with fewer miles to command **higher prices**.
-- Vehicles in **excellent or good condition** to sell for more than those rated fair or poor.
-- These relationships to be **consistent across most body types** and **regions** within California.
+It was expected that:
+- Newer cars with fewer miles would command **higher prices**.
+- Vehicles in **excellent or good condition** would sell for more than those rated fair or poor.
+- These relationships would remain **consistent across most body types** and **regions** within California.
 
 ### **Supporting Hypothesis**
 
@@ -39,27 +42,28 @@ We expect:
    - Assess Data Quality 
    - Early Exploratory Data Analysis (EDA)    
 4. Data Preparation
-   -   Clean and Refine Features
-   -   Impute Missing Data
-   -   Filter Data to applicable subset
-   -   Review Correlations and Check Multicollinearity 
+   - Clean and Refine Features
+   - Impute Missing Data
+   - Filter Data to applicable subset
+   - Review Correlations and Check Multicollinearity 
 5. Train/Test Split 
 6. Modeling (Linear, Ridge, Lasso)  
 7. Evaluation  
-8. Deployment Key Findings and Recommendations  
+8. Deployment of Key Findings and Recommendations  
 
 ---
 
 ## 🔹 Key Findings
+
 **The strongest drivers of car price were:**
 
-| Feature           |  Impact on Price |
-|----------------------|-------------------|
-| **Vehicle Age**       | Older cars sell for significantly less. |
-| **Mileage (Odometer)** | More mileage = lower price. |
-| **Engine Cylinders**   | Cars with more cylinders (e.g., V6, V8) command higher prices. |
-| **Body Type**          | Trucks and convertibles are priced higher than hatchbacks and vans. |
-| **Transmission Type**  | Manual transmission is positively associated with price (may reflect performance/niche appeal). |
+| Feature             | Impact on Price                                       |
+|---------------------|--------------------------------------------------------|
+| **Vehicle Age**      | Older cars sell for significantly less.               |
+| **Mileage (Odometer)** | More mileage = lower price.                         |
+| **Engine Cylinders**  | Cars with more cylinders (e.g., V6, V8) command higher prices. |
+| **Body Type**         | Trucks and convertibles are priced higher than hatchbacks and vans. |
+| **Transmission Type** | Manual transmission is positively associated with price (may reflect performance/niche appeal). |
 
 Features such as fuel type, paint color, and model name were also included in the analysis, but had relatively minor influence on price.
 
@@ -71,7 +75,7 @@ Features such as fuel type, paint color, and model name were also included in th
 
 ## 📊 Model Summary
 
-I compared three models:
+Three models were compared:
 - `LinearRegression`
 - `Ridge Regression` (L2 regularization)
 - `Lasso Regression` (L1 regularization)
@@ -85,7 +89,6 @@ All achieved strong performance:
 | Lasso Regression  | $6,135.71 | $4,137.15 | 0.77     |
 
 > The small difference between models indicates minimal multicollinearity and good data conditioning.
-
 
 ---
 
@@ -101,8 +104,6 @@ All achieved strong performance:
 - **Condition** showed a moderate, but consistent, positive relationship with price — vehicles rated as “excellent” or “good” fetched higher average prices.
 
 These results confirm that the traditional wisdom about used car valuation holds true in a data-driven analysis.
-
----
 
 ### **Supporting Hypothesis Review**
 > *Other features (e.g., body type, transmission, and engine specs) offer additional predictive value beyond age and mileage.*
@@ -121,10 +122,9 @@ While these features added some value, they were secondary to core metrics like 
 ## 💡 Recommendations
 
 - **Prioritize sourcing trucks, convertibles, and vehicles with higher cylinder counts**, especially when they are relatively low-mileage and under 10 years old.
-- **Depreciation accelerates with age and mileage**. Consider offering promotions to move older, high-mileage inventory faster.
+- **Depreciation accelerates with age and mileage** — consider offering promotions to move older, high-mileage inventory faster.
 - **Transmissions matter**: Manual transmissions may signal niche or enthusiast value — consider when pricing or highlighting.
 - **Condition matters** — but customer perception seems to be shaped more by mechanical specs than cosmetic ones.
-
 
 ---
 
@@ -133,6 +133,7 @@ While these features added some value, they were secondary to core metrics like 
 Future versions of this work could:
 - Include **regional submodels** or **dealer-specific pricing strategies**
 - Explore **tree-based or ensemble models** (e.g., Random Forest, XGBoost)
-- Extend to other states - consider adding an input for state in the filter.
+- Extend to other states — consider adding a user-selectable input for state filtering
 
 ---
+
