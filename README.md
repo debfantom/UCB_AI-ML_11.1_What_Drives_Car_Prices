@@ -90,6 +90,15 @@ All achieved strong performance:
 
 > The best alpha values for Ridge and Lasso models are very very small so regularization has little to no effect.  The result is that Ridge and Lasso models behave like the baseline Linear Regression model.
 
+
+#### ✅ Evaluation Explanation
+
+| Metric     | Value       | What it Means |
+|------------|-------------|----------------|
+| **RMSE**   | \$6,135.70  | On average, predictions are off by ~$6K — reasonable considering the price range of used cars. |
+| **MAE**    | \$4,137.15  | Half the errors are under ~$4K — good sign considering the data set includes a wide variety of makes, models, etc.. |
+| **R²**     | **0.7668**  | The model explains **~77% of the variance** in price. |
+
 ---
 
 ## ✅ Hypotheses Review
