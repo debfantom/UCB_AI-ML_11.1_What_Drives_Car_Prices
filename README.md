@@ -56,12 +56,19 @@ Specifically, we expect:
 ---
 
 ## 🔹 Key Findings
+**The strongest drivers of car price were:**
 
-- **Vehicle age** and **mileage** are the strongest negative predictors of price  
-- **Cylinders**, **body type**, and **transmission type** add positive value  
-- Features like **fuel type**, **paint color**, and **model name** had low impact  
+| Feature           |  Impact on Price |
+|----------------------|-------------------|
+| **Vehicle Age**       | Older cars sell for significantly less. |
+| **Mileage (Odometer)** | More mileage = lower price. |
+| **Engine Cylinders**   | Cars with more cylinders (e.g., V6, V8) command higher prices. |
+| **Body Type**          | Trucks and convertibles are priced higher than hatchbacks and vans. |
+| **Transmission Type**  | Manual transmission is positively associated with price (may reflect performance/niche appeal). |
 
-We also found that trucks and convertibles fetched higher prices compared to hatchbacks and vans.
+Features such as fuel type, paint color, and model name were also included in the analysis, but had relatively minor influence on price.
+
+---
 
 ![My Image](images/coefficients_models.png)
 
@@ -69,7 +76,7 @@ We also found that trucks and convertibles fetched higher prices compared to hat
 
 ## 📊 Model Summary
 
-We compared three models:
+I compared three models:
 - `LinearRegression`
 - `Ridge Regression` (L2 regularization)
 - `Lasso Regression` (L1 regularization)
@@ -84,10 +91,6 @@ All achieved strong performance:
 
 > The small difference between models indicates minimal multicollinearity and good data conditioning.
 
----
-Perfect — adding a **Hypotheses Review** section provides a nice bridge from assumptions to evidence, which is super useful for stakeholders and readers alike.
-
-Here’s a Markdown-ready section that evaluates both the **primary** and **supporting** hypotheses based on your findings and model outputs:
 
 ---
 
@@ -120,12 +123,13 @@ While these features added some value, they were secondary to core metrics like 
 
 ---
 
-## 💡 Top Recommendations
+## 💡 Recommendations
 
-- **Source younger vehicles with low mileage**
-- **Prioritize trucks and convertibles** where margins allow
-- **Consider regional pricing models** for finer-grain targeting
-- **Watch transmission type** — manual may hold niche value
+- **Prioritize sourcing trucks, convertibles, and vehicles with higher cylinder counts**, especially when they are relatively low-mileage and under 10 years old.
+- **Depreciation accelerates with age and mileage**. Consider offering promotions to move older, high-mileage inventory faster.
+- **Transmissions matter**: Manual transmissions may signal niche or enthusiast value — consider when pricing or highlighting.
+- **Condition matters** — but customer perception seems to be shaped more by mechanical specs than cosmetic ones.
+
 
 ---
 
@@ -134,5 +138,6 @@ While these features added some value, they were secondary to core metrics like 
 Future versions of this work could:
 - Include **regional submodels** or **dealer-specific pricing strategies**
 - Explore **tree-based or ensemble models** (e.g., Random Forest, XGBoost)
+- Extend to other states - consider adding an input for state in the filter.
 
 ---
